@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "447185897530",
+    "project_id": "towflutterfire",
+    "storage_bucket": "towflutterfire.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:447185897530:android:bb4e89232858c90439cd03",
+        "android_client_info": {
+          "package_name": "com.example.flutercoursetwo"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCP2VxLtn9JWTPsMFX2kAmcOE5nRjh5CWE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

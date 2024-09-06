@@ -1,5 +1,6 @@
+import 'package:flutercoursetwo/core/utils/styles.dart';
 import 'package:flutercoursetwo/features/home/presentation/views/widgets/custom_app_bar.dart';
-import 'package:flutercoursetwo/features/home/presentation/views/widgets/custom_list_view_intem.dart';
+import 'package:flutercoursetwo/features/home/presentation/views/widgets/featured_list_view.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
@@ -9,31 +10,26 @@ class HomeViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Column(
-      children: [
-        CustomAppBar(),
-        // CustomListViewItem(),
-        FeatureBoxListView(),
-      ],
-    );
-  }
-}
+    const CustomAppBar();
+    const FeatureBoxListView();
 
-class FeatureBoxListView extends StatelessWidget {
-  const FeatureBoxListView({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return SizedBox(
-      height: MediaQuery.of(context).size.height * .3,
-      child: ListView.builder(
-          scrollDirection: Axis.horizontal,
-          itemBuilder: (context, index) {
-            return const Padding(
-              padding: EdgeInsets.symmetric(horizontal: 8),
-              child: CustomListViewItem(),
-            );
-          }),
+    return const Padding(
+      padding: EdgeInsets.symmetric(
+        horizontal: 24,
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          // CustomListViewItem(),
+          SizedBox(
+            height: 50,
+          ),
+          Text(
+            'best saller',
+            style: Styles.titleMedium,
+          ),
+        ],
+      ),
     );
   }
 }

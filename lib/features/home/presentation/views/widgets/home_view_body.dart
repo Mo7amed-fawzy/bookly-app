@@ -15,7 +15,7 @@ class HomeViewBody extends StatelessWidget {
         CustomAppBar(),
         FeatureBoxListView(),
         Padding(
-          padding: EdgeInsets.only(left: 24, bottom: 20),
+          padding: EdgeInsets.only(left: 30, bottom: 20),
           child: Text(
             'Best seller',
             style: Styles.textStyle18,
@@ -33,7 +33,7 @@ class BestSallerListViewItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(left: 24),
+      padding: const EdgeInsets.only(left: 30),
       child: SizedBox(
         height: 125,
         child: Row(
@@ -53,8 +53,20 @@ class BestSallerListViewItem extends StatelessWidget {
                 ),
               ),
             ),
+            const SizedBox(width: 30),
             Column(
-              children: [],
+              children: [
+                SizedBox(
+                  width:
+                      MediaQuery.of(context).size.width * .5, //خليتو نص الويدث
+                  child: const Text(
+                    'Harry Potter and the Goblet of Fire ',
+                    maxLines: 2, // دي شبه الفلوت ليفت
+                    overflow: TextOverflow.ellipsis, // ال3 نقط
+                    style: Styles.textStyle20,
+                  ),
+                )
+              ],
             ),
           ],
         ),

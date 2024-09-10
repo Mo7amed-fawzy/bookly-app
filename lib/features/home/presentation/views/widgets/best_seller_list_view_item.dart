@@ -69,7 +69,9 @@ class BestSallerListViewItem extends StatelessWidget {
                         SizedBox(
                           width: MediaQuery.of(context).size.width * .06,
                         ),
-                        const BookRating(),
+                        const BookRating(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                        ),
                       ],
                     )
                   ],

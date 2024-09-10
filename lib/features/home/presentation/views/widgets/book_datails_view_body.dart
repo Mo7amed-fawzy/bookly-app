@@ -1,7 +1,9 @@
 import 'package:flutercoursetwo/core/utils/styles.dart';
+import 'package:flutercoursetwo/features/home/presentation/views/widgets/book_rating.dart';
 import 'package:flutercoursetwo/features/home/presentation/views/widgets/custom_book_detalis_app_bar.dart';
 import 'package:flutercoursetwo/features/home/presentation/views/widgets/custom_book_image.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 
 // احنا مثبتين البريفكس مع اسم الفايل واسم الويدجت فالتسميه الوهو هنا فيو
 class BookDetailsViewBody extends StatelessWidget {
@@ -42,6 +44,12 @@ class BookDetailsViewBody extends StatelessWidget {
                   fontStyle: FontStyle.italic,
                   fontWeight: FontWeight.w500,
                 )),
+          ),
+          const SizedBox(
+            height: 18,
+          ),
+          const BookRating(
+            mainAxisAlignment: MainAxisAlignment.center,
           ),
         ],
       ),

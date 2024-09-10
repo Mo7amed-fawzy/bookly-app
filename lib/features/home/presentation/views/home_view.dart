@@ -7,7 +7,10 @@ class HomeView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const Scaffold(
-      body: HomeViewBody(),
+      body: SafeArea(
+        // بخلي الويدجتس تظهر تحت الستاتس بار
+        child: HomeViewBody(),
+      ),
     );
   }
 }

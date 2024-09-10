@@ -1,9 +1,17 @@
 import 'package:flutercoursetwo/constants.dart';
 import 'package:flutercoursetwo/core/utils/app_router.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 void main() {
+  WidgetsFlutterBinding.ensureInitialized();
+  SystemChrome.setEnabledSystemUIMode(SystemUiMode
+      .immersiveSticky); // لو حابب اخليه يختفي علطول SystemUiMode.leanBack
+
+  // لو حبيت اخفي الناف بار
+  // SystemChrome.setEnabledSystemUIMode(SystemUiMode.immersiveSticky, overlays: [SystemUiOverlay.top]);
+
   runApp(const BooklyApp());
 }
 
@@ -26,4 +34,3 @@ class BooklyApp extends StatelessWidget {
 }
 
 // home: const SplashView(),
-

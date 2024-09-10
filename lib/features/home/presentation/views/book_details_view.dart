@@ -1,3 +1,4 @@
+import 'package:flutercoursetwo/features/home/presentation/views/widgets/custom_book_detalis_app_bar.dart';
 import 'package:flutter/material.dart';
 
 class BookDetailView extends StatelessWidget {
@@ -5,6 +6,13 @@ class BookDetailView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return const Column(
+      children: [
+        Padding(
+          padding: EdgeInsets.symmetric(horizontal: 30),
+          child: CustomBookDetailAppBar(),
+        ),
+      ],
+    );
   }
 }

@@ -2,6 +2,7 @@ import 'package:flutercoursetwo/constants.dart';
 import 'package:flutter/material.dart';
 
 abstract class Styles {
+  // ستاتك عشان انشئها علطول منغير اوبجكت كل شوية
   static const textStyle14 = TextStyle(
     fontSize: 14,
     fontWeight: FontWeight.normal,
@@ -21,7 +22,7 @@ abstract class Styles {
   );
   static const textStyle30 = TextStyle(
     fontSize: 30,
-    fontWeight: FontWeight.normal,
+    fontWeight: FontWeight.w900,
     fontFamily: kGTSectraFine,
   );
 }

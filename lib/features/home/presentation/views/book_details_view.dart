@@ -1,4 +1,5 @@
 import 'package:flutercoursetwo/features/home/presentation/views/widgets/custom_book_detalis_app_bar.dart';
+import 'package:flutercoursetwo/features/home/presentation/views/widgets/custom_book_image.dart';
 import 'package:flutter/material.dart';
 
 class BookDetailView extends StatelessWidget {
@@ -6,13 +7,24 @@ class BookDetailView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Column(
-      children: [
-        Padding(
-          padding: EdgeInsets.symmetric(horizontal: 30),
-          child: CustomBookDetailAppBar(),
-        ),
-      ],
+    // هستعمل حاجه ريلاتف للويدث
+    // عشان تحافظلي علي الويدث
+    var width = MediaQuery.of(context).size.width;
+    return Padding(
+      padding: const EdgeInsets.symmetric(
+        horizontal: 30,
+      ),
+      child: Column(
+        children: [
+          const CustomBookDetailAppBar(),
+          Padding(
+            // امته استخدم قيمه ثابته وامته استخدم قيمه ريلاتف للويدث او الهايت
+            // لما اكون عاوز احافظ علي الشكل ذات نفسه ولما اكون محفتاجها بحيث العناصر متبعدش عن بعض وانا عاوزهم جمب بعض
+            padding: EdgeInsets.symmetric(horizontal: width * .17),
+            child: const CustomBookImage(),
+          )
+        ],
+      ),
     );
   }
 }

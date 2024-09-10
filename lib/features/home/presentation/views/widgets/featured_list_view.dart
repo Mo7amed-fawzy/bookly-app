@@ -1,4 +1,4 @@
-import 'package:flutercoursetwo/features/home/presentation/views/widgets/custom_list_view_intem.dart';
+import 'package:flutercoursetwo/features/home/presentation/views/widgets/custom_book_image.dart';
 import 'package:flutter/material.dart';
 
 class FeatureBoxListView extends StatelessWidget {
@@ -19,7 +19,7 @@ class FeatureBoxListView extends StatelessWidget {
               itemBuilder: (context, index) {
                 return const Padding(
                   padding: EdgeInsets.symmetric(horizontal: 8),
-                  child: CustomListViewItem(),
+                  child: CustomBookImage(),
                 );
               },
             ),

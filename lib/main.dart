@@ -1,7 +1,6 @@
 import 'package:flutercoursetwo/constants.dart';
-import 'package:flutercoursetwo/features/splash/presentation/views/splash_view.dart';
+import 'package:flutercoursetwo/core/utils/app_router.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 void main() {
@@ -13,14 +12,18 @@ class BooklyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return GetMaterialApp(
+    // return GetMaterialApp(
+    return MaterialApp.router(
+      routerConfig: AppRouter.myroutes, // بخليه يدخل عليطول علي السبلاش
       debugShowCheckedModeBanner: false,
       theme: ThemeData.dark().copyWith(
         // بعمل نسخه من الستايل دا بس بعدل شوية قيم
         scaffoldBackgroundColor: kPrimaryColor,
         textTheme: GoogleFonts.montserratTextTheme(ThemeData.dark().textTheme),
       ),
-      home: const SplashView(),
     );
   }
 }
+
+// home: const SplashView(),
+

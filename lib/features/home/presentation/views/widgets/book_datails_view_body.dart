@@ -3,6 +3,7 @@ import 'package:flutercoursetwo/features/home/presentation/views/widgets/book_ra
 import 'package:flutercoursetwo/features/home/presentation/views/widgets/box_action.dart';
 import 'package:flutercoursetwo/features/home/presentation/views/widgets/custom_book_detalis_app_bar.dart';
 import 'package:flutercoursetwo/features/home/presentation/views/widgets/custom_book_image.dart';
+import 'package:flutercoursetwo/features/home/presentation/views/widgets/similar_books_list_view.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
@@ -21,6 +22,7 @@ class BookDetailsViewBody extends StatelessWidget {
         horizontal: 30,
       ),
       child: Column(
+        // crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           const CustomBookDetailAppBar(),
           Padding(
@@ -53,8 +55,21 @@ class BookDetailsViewBody extends StatelessWidget {
           const BookRating(
             mainAxisAlignment: MainAxisAlignment.center,
           ),
-          const SizedBox(height: 37),
+          const SizedBox(height: 30),
           const BooksAction(),
+          const SizedBox(height: 39),
+          Align(
+            alignment: Alignment.centerLeft,
+            child: Text(
+              'You can also like',
+              style: Styles.textStyle14.copyWith(
+                fontWeight: FontWeight.w600,
+              ),
+            ),
+          ),
+          const SizedBox(height: 16),
+          const SimilarBooksListView(),
+          // const SizedBox(height: 40),
         ],
       ),
     );

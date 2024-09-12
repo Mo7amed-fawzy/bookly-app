@@ -6,13 +6,16 @@ import 'package:flutercoursetwo/features/home/presentation/views/widgets/book_ra
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
-class BestSallerListViewItem extends StatelessWidget {
-  const BestSallerListViewItem({super.key});
+class BookSliverListItem extends StatelessWidget {
+  const BookSliverListItem(
+      {super.key, this.padding = const EdgeInsets.only(left: 30)});
+
+  final EdgeInsets padding;
 
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(left: 30),
+      padding: padding,
       child: GestureDetector(
         onTap: () {
           GoRouter.of(context).push(AppRouter.kBookDetailsView);

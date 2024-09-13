@@ -102,7 +102,6 @@ flutter:
   # list giving the asset and other descriptors for the font. For
   # example:
   # fonts:
-   
   fonts:
     - family: GT Sectra Fine
       fonts:

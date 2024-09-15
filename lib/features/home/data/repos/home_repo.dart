@@ -8,7 +8,7 @@ import 'package:flutercoursetwo/features/home/data/models/book_model.dart';
 
 abstract class HomeRepo {
   // هتريتيرن لليست اوف بوكمودل
-  Future<Either<Failure, List<BookModel>>> fetchBestSellerBooks();
+  Future<Either<Failure, List<BookModel>>> fetchNewsetBooks();
   // نوع تايب في 2 تايب الرايت ساكسس والليفت فيليار
   Future<Either<Failure, List<BookModel>>> fetchFeaturedBooks();
 }

@@ -1,4 +1,5 @@
 import 'package:dartz/dartz.dart';
+import 'package:dio/dio.dart';
 import 'package:flutercoursetwo/core/errors/failure.dart';
 import 'package:flutercoursetwo/core/utils/api_service.dart';
 import 'package:flutercoursetwo/features/home/data/models/book_model.dart';
@@ -18,14 +19,18 @@ class HomeReopImpl implements HomeRepo {
           endPoint: 'volumes?Filtering=free-ebooks&q=subject:moon');
 
       List<BookModel> books = [];
+
       for (var item in data['items']) {
         // بعمل ماب (بعمل بارسنج)
         books.add(BookModel.fromJson(item));
-
-        return right(books);
       }
+      return right(books); // تشك علي دي بعدين
     } catch (e) {
-      return left(ServerFailure());
+      if (e is DioException) {
+        return left(ServerFailure.fromDioException(e));
+        //  هنا بكاتش علي دايو ارور وممكن يكون مختلف جاي من حاجه تاني كنت بعمل بارسنج او غيرو فحصلت مشكلة
+      }
+      return left(ServerFailure(e.toString()));
     }
   }
 

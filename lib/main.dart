@@ -32,7 +32,9 @@ class BooklyApp extends StatelessWidget {
       providers: [
         BlocProvider(
           create: (context) => FeaturedBooksCubit(
-            getIt.get<HomeReopImpl>(),
+            getIt.get<HomeReopImpl>()
+              ..fetchFeaturedBooks(), //بعد م انشات النسخه دي نفذت اللاين دا عليها ولو نقطه يبقي بعمل ريتيرن للاين دا
+            // state operator
           ),
         ),
         BlocProvider(

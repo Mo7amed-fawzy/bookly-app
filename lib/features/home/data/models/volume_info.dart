@@ -28,6 +28,7 @@ class VolumeInfo {
     title = json['title'];
     description = json['description'];
     authors = json['authors'] != null ? json['authors'].cast<String>() : [];
+    // authors = (json['authors'] as List<dynamic>?)?.cast<String>(); كانت كدا فكود ثروت
     publisher = json['publisher'];
     readingModes = json['readingModes'] != null
         ? ReadingModes.fromJson(json['readingModes'])

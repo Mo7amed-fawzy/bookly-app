@@ -2,14 +2,17 @@ import 'package:flutercoursetwo/features/home/data/models/acces_info.dart';
 import 'package:flutercoursetwo/features/home/data/models/sale_info.dart';
 import 'package:flutercoursetwo/features/home/data/models/search_info.dart';
 import 'package:flutercoursetwo/features/home/data/models/volume_info.dart';
+// import 'package:http/http.dart';
 
 class BookModel {
+  late VolumeInfo volumeInfo; // سيبها لبعدين
+
   BookModel({
     this.kind,
     this.id,
     this.etag,
     this.selfLink,
-    this.volumeInfo,
+    required this.volumeInfo, // يبقى كما هو
     this.saleInfo,
     this.accessInfo,
     this.searchInfo,
@@ -20,9 +23,8 @@ class BookModel {
     id = json['id'];
     etag = json['etag'];
     selfLink = json['selfLink'];
-    volumeInfo = json['volumeInfo'] != null
-        ? VolumeInfo.fromJson(json['volumeInfo'])
-        : null;
+    volumeInfo = VolumeInfo.fromJson(
+        json['volumeInfo']); // عدلت عليها عشان انا متاكد انها مش بنال
     saleInfo =
         json['saleInfo'] != null ? SaleInfo.fromJson(json['saleInfo']) : null;
     accessInfo = json['accessInfo'] != null
@@ -37,7 +39,7 @@ class BookModel {
   String? id;
   String? etag;
   String? selfLink;
-  VolumeInfo? volumeInfo;
+  // VolumeInfo volumeInfo;
   SaleInfo? saleInfo;
   AccessInfo? accessInfo;
   SearchInfo? searchInfo;
@@ -61,3 +63,46 @@ class BookModel {
     return map;
   }
 }
+
+
+
+
+
+// import 'package:flutercoursetwo/features/home/data/models/acces_info.dart';
+// import 'package:flutercoursetwo/features/home/data/models/sale_info.dart';
+// import 'package:flutercoursetwo/features/home/data/models/search_info.dart';
+// import 'package:flutercoursetwo/features/home/data/models/volume_info.dart';
+
+// class BookModel {
+//   late VolumeInfo volumeInfo; // سيُهيأ لاحقًا
+
+//   BookModel({
+//     this.kind,
+//     this.id,
+//     this.etag,
+//     this.selfLink,
+//     required this.volumeInfo, // يبقى كما هو
+//     this.saleInfo,
+//     this.accessInfo,
+//     this.searchInfo,
+//   });
+
+//   BookModel.fromJson(dynamic json) {
+//     kind = json['kind'];
+//     id = json['id'];
+//     etag = json['etag'];
+//     selfLink = json['selfLink'];
+//     volumeInfo = VolumeInfo.fromJson(json['volumeInfo']); // يتم التهيئة هنا
+//     saleInfo = json['saleInfo'] != null ? SaleInfo.fromJson(json['saleInfo']) : null;
+//     accessInfo = json['accessInfo'] != null ? AccessInfo.fromJson(json['accessInfo']) : null;
+//     searchInfo = json['searchInfo'] != null ? SearchInfo.fromJson(json['searchInfo']) : null;
+//   }
+
+//   String? kind;
+//   String? id;
+//   String? etag;
+//   String? selfLink;
+//   SaleInfo? saleInfo;
+//   AccessInfo? accessInfo;
+//   SearchInfo? searchInfo;
+// }

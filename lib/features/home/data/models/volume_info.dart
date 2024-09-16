@@ -1,8 +1,11 @@
 import 'package:flutercoursetwo/features/home/data/models/image_links.dart';
 import 'package:flutercoursetwo/features/home/data/models/reading_modes.dart';
 import 'package:flutercoursetwo/features/home/data/models/summary.dart';
+// import 'package:http/http.dart';
+// import 'package:meta/meta.dart';
 
 class VolumeInfo {
+  late ImageLinks imageLinks;
   VolumeInfo({
     this.title,
     this.description,
@@ -17,7 +20,7 @@ class VolumeInfo {
     this.allowAnonLogging,
     this.contentVersion,
     this.panelizationSummary,
-    this.imageLinks,
+    required this.imageLinks,
     this.language,
     this.previewLink,
     this.infoLink,
@@ -44,9 +47,7 @@ class VolumeInfo {
     panelizationSummary = json['panelizationSummary'] != null
         ? PanelizationSummary.fromJson(json['panelizationSummary'])
         : null;
-    imageLinks = json['imageLinks'] != null
-        ? ImageLinks.fromJson(json['imageLinks'])
-        : null;
+    imageLinks = ImageLinks.fromJson(json['imageLinks']);
     language = json['language'];
     previewLink = json['previewLink'];
     infoLink = json['infoLink'];
@@ -66,7 +67,7 @@ class VolumeInfo {
   bool? allowAnonLogging;
   String? contentVersion;
   PanelizationSummary? panelizationSummary;
-  ImageLinks? imageLinks;
+
   String? language;
   String? previewLink;
   String? infoLink;

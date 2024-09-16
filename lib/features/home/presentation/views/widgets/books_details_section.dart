@@ -17,7 +17,10 @@ class BookDetailsSection extends StatelessWidget {
           // امته استخدم قيمه ثابته وامته استخدم قيمه ريلاتف للويدث او الهايت
           // لما اكون عاوز احافظ علي الشكل ذات نفسه ولما اكون محفتاجها بحيث العناصر متبعدش عن بعض وانا عاوزهم جمب بعض
           padding: EdgeInsets.symmetric(horizontal: width * .17),
-          child: const CustomBookImage(),
+          child: const CustomBookImage(
+            imageUrl:
+                'https://cdn.britannica.com/84/73184-050-05ED59CB/Sunflower-field-Fargo-North-Dakota.jpg',
+          ),
         ),
         const SizedBox(
           height: 43,

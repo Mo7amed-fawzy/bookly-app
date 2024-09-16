@@ -31,11 +31,8 @@ class BooklyApp extends StatelessWidget {
     return MultiBlocProvider(
       providers: [
         BlocProvider(
-          create: (context) => FeaturedBooksCubit(
-            getIt.get<HomeReopImpl>()
-              ..fetchFeaturedBooks(), //بعد م انشات النسخه دي نفذت اللاين دا عليها ولو نقطه يبقي بعمل ريتيرن للاين دا
-            // state operator
-          ),
+          create: (context) => FeaturedBooksCubit(getIt.get<HomeReopImpl>())
+            ..fetchFeaturedBooks(), // تأكد من استدعاء fetchFeaturedBooks عند إنشاء الـ Cubit
         ),
         BlocProvider(
           create: (context) => NewstBooksCubit(
@@ -43,6 +40,20 @@ class BooklyApp extends StatelessWidget {
           ),
         ),
       ],
+      // providers: [
+      //   BlocProvider(
+      //     create: (context) => FeaturedBooksCubit(
+      //       getIt.get<HomeReopImpl>()
+      //         ..fetchFeaturedBooks(), //بعد م انشات النسخه دي نفذت اللاين دا عليها ولو نقطه يبقي بعمل ريتيرن للاين دا
+      //       // state operator
+      //     ),
+      //   ),
+      //   BlocProvider(
+      //     create: (context) => NewstBooksCubit(
+      //       getIt.get<HomeReopImpl>(),
+      //     ),
+      //   ),
+      // ],
       child: MaterialApp.router(
         routerConfig: AppRouter.myroutes, // بخليه يدخل عليطول علي السبلاش
         debugShowCheckedModeBanner: false,

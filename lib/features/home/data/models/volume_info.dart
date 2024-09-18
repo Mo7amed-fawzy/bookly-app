@@ -5,7 +5,7 @@ import 'package:flutercoursetwo/features/home/data/models/summary.dart';
 // import 'package:meta/meta.dart';
 
 class VolumeInfo {
-  late ImageLinks imageLinks;
+  late ImageLinks? imageLinks;
   late double averageRating;
   late int ratingsCount;
   VolumeInfo({
@@ -42,8 +42,19 @@ class VolumeInfo {
     categories =
         json['categories'] != null ? json['categories'].cast<String>() : [];
 
-    averageRating =
-        json['averageRating'] != null ? json['averageRating'].toDouble() : 0.0;
+    averageRating = json['averageRating'] != null
+        ? (json['averageRating'] is int
+            ? (json['averageRating'] as int).toDouble() // تحويل int إلى double
+            : json['averageRating'] is double
+                ? json['averageRating']
+                    as double // استخدام القيمة كما هي إذا كانت double
+                : 0.0) // إذا كانت نوعًا آخر غير int أو double
+        : 0.0; // القيمة الافتراضية إذا كانت null
+
+    //     averageRating = (json['averageRating'] is double) كود ثروت
+    // ? json['averageRating']
+    // : (json['averageRating'] as int?)?.toDouble() ?? 0.0;
+
     ratingsCount =
         json['ratingsCount'] != null ? json['ratingsCount'].toInt() : 0;
 
@@ -53,7 +64,9 @@ class VolumeInfo {
     panelizationSummary = json['panelizationSummary'] != null
         ? PanelizationSummary.fromJson(json['panelizationSummary'])
         : null;
-    imageLinks = ImageLinks.fromJson(json['imageLinks']);
+    imageLinks = json['imageLinks'] == null
+        ? null
+        : ImageLinks.fromJson(json['imageLinks']);
     language = json['language'];
     previewLink = json['previewLink'];
     infoLink = json['infoLink'];

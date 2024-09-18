@@ -5,7 +5,11 @@ import 'package:skeletonizer/skeletonizer.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class CustomBookImage extends StatelessWidget {
-  const CustomBookImage({super.key, required this.imageUrl, this.onPressed});
+  const CustomBookImage({
+    super.key,
+    required this.imageUrl,
+    this.onPressed,
+  });
 
   final String imageUrl;
   final VoidCallback? onPressed; // إضافة onPressed كـ Callback اختياري
@@ -23,54 +27,46 @@ class CustomBookImage extends StatelessWidget {
         builder: (context, state) {
           bool isLoading = state is ImageLoadingInProgress;
 
-          return
-              // ClipRRect(
-              //   borderRadius: BorderRadius.circular(16),
-              //   child:
-              AspectRatio(
+          return AspectRatio(
             aspectRatio: 2.7 / 4,
             child: Stack(
               children: [
-                // ايفيكت التحميل للصورة فقط
                 Skeletonizer(
                   enabled: isLoading,
-                  // child: CachedNetworkImage( كود ثروت الفيه بج
-                  //   fit: BoxFit.fill,
-                  //   imageUrl: imageUrl,
-                  //   // placeholder: (context, url) =>
-                  //   //     const Center(child: CircularProgressIndicator()),
-                  //   errorWidget: (context, url, error) =>
-                  //       const Icon(Icons.broken_image),
-                  // ),
                   child: Container(
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(16),
                       image: DecorationImage(
-                        fit: BoxFit.fill,
-                        image: NetworkImage(imageUrl),
+                        fit: BoxFit.fill, image: NetworkImage(imageUrl),
+                        // استبدال بالصورة الافتراضية
                       ),
                     ),
+                    child: imageUrl.isEmpty
+                        ? const Center(
+                            child: Icon(
+                              Icons.image_not_supported,
+                              color: Colors.grey,
+                              size: 50,
+                            ),
+                          )
+                        : null,
                   ),
                 ),
                 if (onPressed != null)
-                  // ايفيكت التحميل للزر فقط
                   Positioned(
                     bottom: 10,
                     right: 3,
                     child: Skeletonizer(
-                      enabled: isLoading, // ايفيكت التحميل على الزر
+                      enabled: isLoading,
                       child: ElevatedButton(
                         style: ElevatedButton.styleFrom(
                           backgroundColor: isLoading
-                              ? Colors.grey[300] // خلفية رمادية عند التحميل
-                              : Colors.white
-                                  .withOpacity(0.7), // خلفية شفافة بعد التحميل
+                              ? Colors.grey[300]
+                              : Colors.white.withOpacity(0.7),
                           shape: const CircleBorder(),
                           padding: const EdgeInsets.all(14),
                         ),
-                        onPressed: isLoading
-                            ? null // بوقف الزرار اثناء التحميل
-                            : () {}, // لما التحميل يخلص اعملي كذا
+                        onPressed: isLoading ? null : onPressed,
                         child: const Icon(
                           FontAwesomeIcons.caretRight,
                           color: Colors.white,
@@ -81,7 +77,6 @@ class CustomBookImage extends StatelessWidget {
               ],
             ),
           );
-          // );
         },
       ),
     );

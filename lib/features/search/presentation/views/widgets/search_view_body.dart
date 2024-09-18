@@ -37,10 +37,10 @@ class SearchResultListView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return CustomScrollView(
+    return const CustomScrollView(
       slivers: [
         SliverPadding(
-          padding: const EdgeInsets.symmetric(vertical: 10),
+          padding: EdgeInsets.symmetric(vertical: 10),
           // sliver: SliverList(
           //   delegate: SliverChildBuilderDelegate(
           //     (context, index) => const BookListViewItem(

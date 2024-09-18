@@ -31,8 +31,9 @@ class FeatureBoxListView extends StatelessWidget {
                         padding: const EdgeInsets.symmetric(horizontal: 8),
                         child: CustomBookImage(
                           onPressed: () {},
-                          imageUrl: state
-                              .books[index].volumeInfo.imageLinks.thumbnail,
+                          imageUrl: state.books[index].volumeInfo.imageLinks
+                                  ?.thumbnail ??
+                              '',
                         ),
                       );
                     },

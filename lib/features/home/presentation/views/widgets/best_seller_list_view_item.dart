@@ -29,7 +29,8 @@ class BookListViewItem extends StatelessWidget {
             children: [
               CustomBookImage(
                   //عملية ريفاكتور
-                  imageUrl: bookModel.volumeInfo.imageLinks.thumbnail),
+                  imageUrl: bookModel.volumeInfo.imageLinks?.thumbnail ??
+                      ''), // بقولو لو مش بنل اعرض ولو بنل متحطش حاجه 'دي'
               // AspectRatio(
               //   aspectRatio: 2.5 / 4,
               //   child: Container(
@@ -65,6 +66,7 @@ class BookListViewItem extends StatelessWidget {
                     Text(
                       bookModel.volumeInfo.authors![0],
                       style: Styles.textStyle14,
+                      overflow: TextOverflow.ellipsis,
                     ),
                     const SizedBox(height: 3),
                     Row(

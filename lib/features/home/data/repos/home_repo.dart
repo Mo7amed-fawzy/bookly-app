@@ -11,4 +11,6 @@ abstract class HomeRepo {
   Future<Either<Failure, List<BookModel>>> fetchNewsetBooks();
   // نوع تايب في 2 تايب الرايت ساكسس والليفت فيليار
   Future<Either<Failure, List<BookModel>>> fetchFeaturedBooks();
+  Future<Either<Failure, List<BookModel>>> fetchSimilarBooks(
+      {required String category});
 }

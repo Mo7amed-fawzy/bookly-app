@@ -6,6 +6,8 @@ import 'package:flutercoursetwo/features/home/data/models/summary.dart';
 
 class VolumeInfo {
   late ImageLinks imageLinks;
+  late double averageRating;
+  late int ratingsCount;
   VolumeInfo({
     this.title,
     this.description,
@@ -14,8 +16,8 @@ class VolumeInfo {
     this.readingModes,
     this.printType,
     this.categories,
-    this.averageRating,
-    this.ratingsCount,
+    required this.averageRating,
+    required this.ratingsCount,
     this.maturityRating,
     this.allowAnonLogging,
     this.contentVersion,
@@ -39,8 +41,12 @@ class VolumeInfo {
     printType = json['printType'];
     categories =
         json['categories'] != null ? json['categories'].cast<String>() : [];
-    averageRating = json['averageRating'];
-    ratingsCount = json['ratingsCount'];
+
+    averageRating =
+        json['averageRating'] != null ? json['averageRating'].toDouble() : 0.0;
+    ratingsCount =
+        json['ratingsCount'] != null ? json['ratingsCount'].toInt() : 0;
+
     maturityRating = json['maturityRating'];
     allowAnonLogging = json['allowAnonLogging'];
     contentVersion = json['contentVersion'];
@@ -61,8 +67,8 @@ class VolumeInfo {
   ReadingModes? readingModes;
   String? printType;
   List<String>? categories;
-  num? averageRating;
-  num? ratingsCount;
+  // int averageRating;
+  // int ratingsCount;
   String? maturityRating;
   bool? allowAnonLogging;
   String? contentVersion;

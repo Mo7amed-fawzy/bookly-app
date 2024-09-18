@@ -1,44 +1,40 @@
 import 'package:flutercoursetwo/features/home/presentation/views/widgets/best_seller_list_view_item.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutercoursetwo/features/home/presentation/manager/newst_books_cubit/newst_books_cubit.dart';
+import 'package:flutercoursetwo/core/widgets/custom_error_widget.dart';
+import 'package:flutercoursetwo/core/widgets/custom_loading_indicator.dart';
 
 class BestSellerListView extends StatelessWidget {
   const BestSellerListView({super.key});
-  // هعمل كوستوم سكرولفيو وبتعتمد علي حاجه اسمها سليفرز الهي بتخلي مجموعة ويدجتس تسكرول مع بعض
 
   @override
   Widget build(BuildContext context) {
-    return SliverList(
-      // دا احسن حاجه تستعملها لليستس العاوزه سكرول
-      // ودي البقول بيها هسكرول ف ايه
-      // SliverChildListDelegate كان في دي برضه بس دي للحجات الصغيره المحدوده
-      delegate: SliverChildBuilderDelegate(
-        // مسؤول عن بناء العناصر الخاصة بالـ سليفر بطريقة ديناميكية الهي طريقة بنا العناصر وبتبني الفلشاشه بس
-        childCount: 10, // عدد العناصر
-        (context, index) {
-          return const Padding(
-            padding: EdgeInsets.symmetric(vertical: 10),
-            child: BookSliverListItem(),
+    return BlocBuilder<NewstBooksCubit, NewstBooksState>(
+      builder: (context, state) {
+        if (state is NewstBooksSuccess) {
+          return ListView.builder(
+            shrinkWrap: true, // يسمح لقائمة العرض بأن تشغل المساحة المتاحة فقط
+            physics:
+                const NeverScrollableScrollPhysics(), // منع التمرير في هذا الجزء لتجنب التمرير المزدوج
+            itemCount: state.books.length,
+            itemBuilder: (context, index) {
+              return Padding(
+                padding: const EdgeInsets.symmetric(vertical: 10),
+                child: BookListViewItem(
+                  bookModel: state.books[index],
+                ),
+              );
+            },
           );
-        },
-      ),
+        } else if (state is NewstBooksFailure) {
+          return CustomErrorWidget(
+            errorMessage: state.errMessage,
+          );
+        } else {
+          return const CustomLoadingIndicator();
+        }
+      },
     );
   }
 }
-// كود ثروت سامي القديم
-    // شلت هنا اكسبانديد عشان مينفعش يكون في 2 اسبانديد
-//     return ListView.builder(
-//       // بتبني الويدجيتس البتظهر علي السكرين عشان كدا الهايت بتاعها بياكسباند براحتو ولكن استعملت شرنك راب بتروو عشان تقدر تحدد الارتفاع بتاعها وبتالي استعملت فيزكس نوتسكرولابل واحطها جوا حاجه بتسكرول
-//       // shrinkWrap: true, // عاوزك تاخد الهايت بتاع التشيلدرن بتوعك
-//       physics:
-//           const NeverScrollableScrollPhysics(), // هنا مربط الفرس بخليها متسكرولش
-//       padding: EdgeInsets.zero, // بشيل البادنج الديفولت
-//       itemCount: 10,
-//       itemBuilder: (context, index) {
-//         return const Padding(
-//           padding: EdgeInsets.symmetric(vertical: 10),
-//           child: BestSallerListViewItem(),
-//         );
-//       },
-//     );
-//   }
-// }

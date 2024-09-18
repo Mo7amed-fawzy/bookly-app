@@ -1,5 +1,5 @@
 import 'package:flutercoursetwo/core/utils/styles.dart';
-import 'package:flutercoursetwo/features/home/presentation/views/widgets/best_seller_list_view_item.dart';
+// import 'package:flutercoursetwo/features/home/presentation/views/widgets/best_seller_list_view_item.dart';
 import 'package:flutercoursetwo/features/search/presentation/views/widgets/custom_search_text_field.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
@@ -41,14 +41,15 @@ class SearchResultListView extends StatelessWidget {
       slivers: [
         SliverPadding(
           padding: const EdgeInsets.symmetric(vertical: 10),
-          sliver: SliverList(
-            delegate: SliverChildBuilderDelegate(
-              (context, index) => const BookSliverListItem(
-                padding: EdgeInsets.only(left: 0, top: 5),
-              ),
-              childCount: 10,
-            ),
-          ),
+          // sliver: SliverList(
+          //   delegate: SliverChildBuilderDelegate(
+          //     (context, index) => const BookListViewItem(
+          //       padding: EdgeInsets.only(left: 0, top: 5),
+          //       bookModel: volum,
+          //     ),
+          //     childCount: 10,
+          //   ),
+          // ),
         ),
       ],
     );

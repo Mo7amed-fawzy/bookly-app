@@ -27,6 +27,8 @@ class HomeReopImpl implements HomeRepo {
       }
       return right(books); // تشك علي دي بعدين
     } catch (e) {
+      left(ServerFailure(e.toString()));
+
       if (e is DioException) {
         return left(ServerFailure.fromDioException(e));
         //  هنا بكاتش علي دايو ارور وممكن يكون مختلف جاي من حاجه تاني كنت بعمل بارسنج او غيرو فحصلت مشكلة

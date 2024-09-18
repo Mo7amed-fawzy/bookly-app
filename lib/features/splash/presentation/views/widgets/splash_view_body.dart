@@ -77,7 +77,11 @@ class _SplashViewBodyState extends State<SplashViewBody>
       //     () => const HomeView(),
       //     transition: Transition.fade,
       //     duration: KTransitionDuration,);
-      GoRouter.of(context).push(AppRouter.kHomeView);
+      if (mounted) {
+        // دي تبع كلاس State وبتتاكد الستات الحاليه لسا متصله بالويدجن تريي ولا لا State (الكلام دا قبل استخدام BuildContext )
+        // هنا استعمالها بتتعامل مع العمليات غير المتزامنة والممكن تستمر لفترة اطول بعد التخلص من الـ State (2 Duration)
+        GoRouter.of(context).push(AppRouter.kHomeView);
+      }
     });
   }
 }

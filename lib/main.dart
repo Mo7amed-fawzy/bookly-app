@@ -39,21 +39,11 @@ class BooklyApp extends StatelessWidget {
             getIt.get<HomeReopImpl>(),
           ),
         ),
+        // BlocProvider(
+        //   create: (context) =>
+        //       ImageLoadingCubit()..loadData(), // إضافة ImageLoadingCubit هنا
+        // ),
       ],
-      // providers: [
-      //   BlocProvider(
-      //     create: (context) => FeaturedBooksCubit(
-      //       getIt.get<HomeReopImpl>()
-      //         ..fetchFeaturedBooks(), //بعد م انشات النسخه دي نفذت اللاين دا عليها ولو نقطه يبقي بعمل ريتيرن للاين دا
-      //       // state operator
-      //     ),
-      //   ),
-      //   BlocProvider(
-      //     create: (context) => NewstBooksCubit(
-      //       getIt.get<HomeReopImpl>(),
-      //     ),
-      //   ),
-      // ],
       child: MaterialApp.router(
         routerConfig: AppRouter.myroutes, // بخليه يدخل عليطول علي السبلاش
         debugShowCheckedModeBanner: false,

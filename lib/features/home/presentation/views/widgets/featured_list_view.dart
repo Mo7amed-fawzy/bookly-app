@@ -12,8 +12,6 @@ class FeatureBoxListView extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocBuilder<FeaturedBooksCubit, FeaturedBooksState>(
       builder: (context, state) {
-        print('الحالة الحاااليه من الفيتشرد بووكس: $state');
-
         if (state is FeaturedBooksSuccess) {
           return Padding(
             padding: const EdgeInsets.only(left: 22),
@@ -32,6 +30,7 @@ class FeatureBoxListView extends StatelessWidget {
                       return Padding(
                         padding: const EdgeInsets.symmetric(horizontal: 8),
                         child: CustomBookImage(
+                          onPressed: () {},
                           imageUrl: state
                               .books[index].volumeInfo.imageLinks.thumbnail,
                         ),

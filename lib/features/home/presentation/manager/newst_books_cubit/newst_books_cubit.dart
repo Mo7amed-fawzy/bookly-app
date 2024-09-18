@@ -15,13 +15,9 @@ class NewstBooksCubit extends Cubit<NewstBooksState> {
     var result = await homeRepo.fetchNewsetBooks();
 
     result.fold((failure) {
-      print('Failed to fetch books: ${failure.errMessage}');
-
       emit(NewstBooksFailure(failure.errMessage));
     }, (books) // ددي حالة الساكسيس
         {
-      print('Fetched ${books.length} books');
-
       emit(NewstBooksSuccess(books));
     });
   }

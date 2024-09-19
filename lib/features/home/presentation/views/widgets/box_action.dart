@@ -1,3 +1,4 @@
+import 'package:flutercoursetwo/core/functions/launch_url.dart';
 import 'package:flutercoursetwo/core/widgets/custom_button.dart';
 import 'package:flutercoursetwo/features/home/data/models/book_model.dart';
 import 'package:flutter/material.dart';
@@ -16,7 +17,13 @@ class BooksAction extends StatelessWidget {
         children: [
           Expanded(
               child: CustomButton(
-            onPressed: _launchUrl,
+            onPressed: () {
+              ScaffoldMessenger.of(context).showSnackBar(
+                const SnackBar(
+                  content: Text('this book already in your purchase'),
+                ),
+              );
+            },
             text: 'free',
             backGroundColor: Colors.white,
             textColor: Colors.black,
@@ -27,8 +34,10 @@ class BooksAction extends StatelessWidget {
           )),
           Expanded(
             child: CustomButton(
-              onPressed: _launchUrl,
-              text: 'Free preview',
+              onPressed: () {
+                launchCustomUrl(context, booktourl.volumeInfo.previewLink!);
+              },
+              text: getText(booktourl),
               backGroundColor: const Color(0xffEF8262),
               textColor: Colors.white,
               borderRadios: const BorderRadius.only(
@@ -48,6 +57,14 @@ class BooksAction extends StatelessWidget {
     if (await canLaunchUrl(url)) {
       // throw Exception('Could not launch $_url'); هنا بيعمل اكسبشن ودا مش افضل حل
       await launchUrl(url);
+    }
+  }
+
+  String getText(BookModel booktourl) {
+    if (booktourl.volumeInfo.previewLink == null) {
+      return 'not available';
+    } else {
+      return 'free preview';
     }
   }
 }

@@ -17,7 +17,10 @@ class HomeReopImpl implements HomeRepo {
     try {
       var data = await apiService.get(
           endPoint:
-              'volumes?Filtering=free-ebooks&Sorting=newest&q=computer science');
+              'volumes?Filtering=free-ebooks&Sorting=newest&q=subject:computer science');
+      // بقول ان الحاجه فحالة فوليوم (قائمة الكتب) volumes?
+      // بعد كدا بستعمل باراميترز Filtering & Sorting
+      // واستعملت الاساسية علشان احط موضوع السيرش الاساسي q
 
       List<BookModel> books = [];
 
@@ -46,8 +49,7 @@ class HomeReopImpl implements HomeRepo {
   Future<Either<Failure, List<BookModel>>> fetchFeaturedBooks() async {
     try {
       var data = await apiService.get(
-          endPoint:
-              'volumes?Filtering=free-ebooks&Sorting=relevance &q=subject:programming');
+          endPoint: 'volumes?Filtering=free-ebooks&q=subject:programming');
 
       List<BookModel> books = [];
 
@@ -68,7 +70,8 @@ class HomeReopImpl implements HomeRepo {
       {required String category}) async {
     try {
       var data = await apiService.get(
-          endPoint: 'volumes?Filtering=free-ebooks&q=subject:moon');
+          endPoint:
+              'volumes?Filtering=free-ebooks&Sorting=relevance &q=subject:programming');
 
       List<BookModel> books = [];
 

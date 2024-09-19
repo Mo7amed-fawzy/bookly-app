@@ -1,4 +1,4 @@
-import 'package:flutercoursetwo/features/home/presentation/manager/cubit/image_switcher_cubit_cubit.dart';
+import 'package:flutercoursetwo/features/home/presentation/manager/image_loading_cubit/image_switcher_cubit_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:skeletonizer/skeletonizer.dart';

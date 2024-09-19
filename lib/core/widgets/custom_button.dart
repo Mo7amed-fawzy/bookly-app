@@ -9,6 +9,7 @@ class CustomButton extends StatelessWidget {
     required this.text,
     this.borderRadios,
     this.fontSize,
+    this.onPressed,
   });
 
   final String text;
@@ -16,18 +17,25 @@ class CustomButton extends StatelessWidget {
   final Color textColor;
   final BorderRadius? borderRadios; // بعمل قيمه ديفولت
   final double? fontSize;
+  final void Function()? onPressed;
   @override
   Widget build(BuildContext context) {
     return SizedBox(
       height: 48,
       child: ElevatedButton(
-        onPressed: () {},
-        style: ElevatedButton.styleFrom(
-          backgroundColor: backGroundColor,
-          shape: RoundedRectangleBorder(
-            borderRadius: borderRadios ??
-                BorderRadius.circular(16), // null check operator
-          ), // بقولو لو جاتلك قيمه ليها استخدمها مجاتش استخدم البوردر راديوس بتعتي
+        onPressed: onPressed,
+        style: ButtonStyle(
+          // backgroundColor: backGroundColor,
+          backgroundColor: WidgetStateProperty.all(backGroundColor),
+          shape: WidgetStateProperty.all(
+            RoundedRectangleBorder(
+              borderRadius: borderRadios ?? BorderRadius.circular(16),
+            ),
+            // shape: RoundedRectangleBorder(
+            //   borderRadius: borderRadios ??
+            //       BorderRadius.circular(16), // null check operator
+            // ), // بقولو لو جاتلك قيمه ليها استخدمها مجاتش استخدم البوردر راديوس بتعتي
+          ),
         ),
         child: Text(
           text,

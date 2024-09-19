@@ -1,3 +1,4 @@
+import 'package:flutercoursetwo/features/home/data/models/book_model.dart';
 import 'package:flutercoursetwo/features/home/presentation/views/widgets/books_details_section.dart';
 import 'package:flutercoursetwo/features/home/presentation/views/widgets/custom_book_detalis_app_bar.dart';
 import 'package:flutercoursetwo/features/home/presentation/views/widgets/similar_books_section.dart';
@@ -7,21 +8,22 @@ import 'package:flutter/widgets.dart';
 
 // احنا مثبتين البريفكس مع اسم الفايل واسم الويدجت فالتسميه الوهو هنا فيو
 class BookDetailsViewBody extends StatelessWidget {
-  const BookDetailsViewBody({super.key});
+  const BookDetailsViewBody({super.key, required this.currentbook});
 
+  final BookModel currentbook;
   @override
   Widget build(BuildContext context) {
     // هستعمل حاجه ريلاتف للويدث
     // عشان تحافظلي علي الويدث
 
-    return const CustomScrollView(
+    return CustomScrollView(
       slivers: [
         SliverFillRemaining(
           // علشان الكوستومسكرولفيو بتسكرول عادي فلما تنزل لجوا مش لازم تبقي سكرولابل
           hasScrollBody: false,
           // بقلو املا الفراغات
           child: Padding(
-            padding: EdgeInsets.symmetric(
+            padding: const EdgeInsets.symmetric(
               horizontal: 30,
             ),
             // child: SingleChildScrollView(
@@ -31,14 +33,16 @@ class BookDetailsViewBody extends StatelessWidget {
             child: Column(
               // crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                CustomBookDetailAppBar(),
-                BookDetailsSection(),
+                const CustomBookDetailAppBar(),
+                BookDetailsSection(
+                  bookdetails: currentbook,
+                ),
 
-                Expanded(
+                const Expanded(
                     child: SizedBox(
                   height: 30,
                 )),
-                SimilarBoosksSection(),
+                const SimilarBoosksSection(),
                 // const SizedBox(height: 40),
               ],
             ),

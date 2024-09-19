@@ -7,7 +7,7 @@ import 'package:flutercoursetwo/features/home/data/models/summary.dart';
 class VolumeInfo {
   late ImageLinks? imageLinks;
   late double averageRating;
-  late int ratingsCount;
+  late num ratingsCount;
   VolumeInfo({
     this.title,
     this.description,

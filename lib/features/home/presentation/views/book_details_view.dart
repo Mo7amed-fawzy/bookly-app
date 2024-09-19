@@ -14,6 +14,8 @@ class BookDetailView extends StatefulWidget {
 
 class _BookDetailViewState extends State<BookDetailView> {
   @override
+
+  // بعمل تريجر فنفس السكرين
   void initState() {
     BlocProvider.of<SimilarBooksCubit>(context).fetchSimilarBooks(
         category: widget.bookModel.volumeInfo.categories![0]);
@@ -22,8 +24,10 @@ class _BookDetailViewState extends State<BookDetailView> {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      body: BookDetailsViewBody(),
+    return Scaffold(
+      body: BookDetailsViewBody(
+        currentbook: widget.bookModel,
+      ),
     );
   }
 }

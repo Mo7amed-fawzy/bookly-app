@@ -1,9 +1,11 @@
+import 'package:flutercoursetwo/core/utils/app_router.dart';
 import 'package:flutercoursetwo/core/widgets/custom_error_widget.dart';
 import 'package:flutercoursetwo/core/widgets/custom_loading_indicator.dart';
 import 'package:flutercoursetwo/features/home/presentation/manager/featured_books_cubit/featured_books_cubit.dart';
 import 'package:flutercoursetwo/features/home/presentation/views/widgets/custom_book_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:go_router/go_router.dart';
 
 class FeatureBoxListView extends StatelessWidget {
   const FeatureBoxListView({super.key});
@@ -29,11 +31,19 @@ class FeatureBoxListView extends StatelessWidget {
                     itemBuilder: (context, index) {
                       return Padding(
                         padding: const EdgeInsets.symmetric(horizontal: 8),
-                        child: CustomBookImage(
-                          onPressed: () {},
-                          imageUrl: state.books[index].volumeInfo.imageLinks
-                                  ?.thumbnail ??
-                              '',
+                        child: GestureDetector(
+                          onTap: () {
+                            GoRouter.of(context).push(
+                              AppRouter.kBookDetailsView,
+                              extra: state.books[index],
+                            );
+                          },
+                          child: CustomBookImage(
+                            onPressed: () {},
+                            imageUrl: state.books[index].volumeInfo.imageLinks
+                                    ?.thumbnail ??
+                                '',
+                          ),
                         ),
                       );
                     },

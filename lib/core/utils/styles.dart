@@ -1,4 +1,4 @@
-import 'package:flutercoursetwo/constants.dart';
+import 'package:bookly/constants.dart';
 import 'package:flutter/material.dart';
 
 abstract class Styles {

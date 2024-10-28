@@ -1,4 +1,4 @@
-import 'package:flutercoursetwo/core/utils/styles.dart';
+import 'package:bookly/core/utils/styles.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';

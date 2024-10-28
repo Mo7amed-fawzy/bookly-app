@@ -1,8 +1,8 @@
-import 'package:flutercoursetwo/core/utils/app_router.dart';
-import 'package:flutercoursetwo/core/widgets/custom_error_widget.dart';
-import 'package:flutercoursetwo/core/widgets/custom_loading_indicator.dart';
-import 'package:flutercoursetwo/features/home/presentation/manager/similar_books_cubit/similar_books_cubit_cubit.dart';
-import 'package:flutercoursetwo/features/home/presentation/views/widgets/custom_book_image.dart';
+import 'package:bookly/core/utils/app_router.dart';
+import 'package:bookly/core/widgets/custom_error_widget.dart';
+import 'package:bookly/core/widgets/custom_loading_indicator.dart';
+import 'package:bookly/features/home/presentation/manager/similar_books_cubit/similar_books_cubit_cubit.dart';
+import 'package:bookly/features/home/presentation/views/widgets/custom_book_image.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';

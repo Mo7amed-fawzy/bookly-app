@@ -1,6 +1,6 @@
-import 'package:flutercoursetwo/core/utils/app_router.dart';
-import 'package:flutercoursetwo/features/splash/presentation/views/widgets/opacity_splash_logo.dart';
-import 'package:flutercoursetwo/features/splash/presentation/views/widgets/sliding_text.dart';
+import 'package:bookly/core/utils/app_router.dart';
+import 'package:bookly/features/splash/presentation/views/widgets/opacity_splash_logo.dart';
+import 'package:bookly/features/splash/presentation/views/widgets/sliding_text.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';

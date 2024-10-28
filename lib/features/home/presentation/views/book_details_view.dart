@@ -1,6 +1,6 @@
-import 'package:flutercoursetwo/features/home/data/models/book_model.dart';
-import 'package:flutercoursetwo/features/home/presentation/manager/similar_books_cubit/similar_books_cubit_cubit.dart';
-import 'package:flutercoursetwo/features/home/presentation/views/widgets/book_datails_view_body.dart';
+import 'package:bookly/features/home/data/models/book_model.dart';
+import 'package:bookly/features/home/presentation/manager/similar_books_cubit/similar_books_cubit_cubit.dart';
+import 'package:bookly/features/home/presentation/views/widgets/book_datails_view_body.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 

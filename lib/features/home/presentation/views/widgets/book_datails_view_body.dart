@@ -1,7 +1,7 @@
-import 'package:flutercoursetwo/features/home/data/models/book_model.dart';
-import 'package:flutercoursetwo/features/home/presentation/views/widgets/books_details_section.dart';
-import 'package:flutercoursetwo/features/home/presentation/views/widgets/custom_book_detalis_app_bar.dart';
-import 'package:flutercoursetwo/features/home/presentation/views/widgets/similar_books_section.dart';
+import 'package:bookly/features/home/data/models/book_model.dart';
+import 'package:bookly/features/home/presentation/views/widgets/books_details_section.dart';
+import 'package:bookly/features/home/presentation/views/widgets/custom_book_detalis_app_bar.dart';
+import 'package:bookly/features/home/presentation/views/widgets/similar_books_section.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';

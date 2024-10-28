@@ -1,8 +1,9 @@
-import 'package:flutercoursetwo/core/utils/styles.dart';
-import 'package:flutercoursetwo/features/home/data/models/book_model.dart';
-import 'package:flutercoursetwo/features/home/presentation/views/widgets/book_rating.dart';
-import 'package:flutercoursetwo/features/home/presentation/views/widgets/box_action.dart';
-import 'package:flutercoursetwo/features/home/presentation/views/widgets/custom_book_image.dart';
+
+import 'package:bookly/core/utils/styles.dart';
+import 'package:bookly/features/home/data/models/book_model.dart';
+import 'package:bookly/features/home/presentation/views/widgets/book_rating.dart';
+import 'package:bookly/features/home/presentation/views/widgets/box_action.dart';
+import 'package:bookly/features/home/presentation/views/widgets/custom_book_image.dart';
 import 'package:flutter/cupertino.dart';
 
 class BookDetailsSection extends StatelessWidget {
@@ -38,11 +39,13 @@ class BookDetailsSection extends StatelessWidget {
         ),
         Opacity(
           opacity: .7,
-          child: Text(bookdetails.volumeInfo.authors![0],
-              style: Styles.textStyle18.copyWith(
-                fontStyle: FontStyle.italic,
-                fontWeight: FontWeight.w500,
-              )),
+          child: Text(
+            bookdetails.volumeInfo.authors![0],
+            style: Styles.textStyle18.copyWith(
+              fontStyle: FontStyle.italic,
+              fontWeight: FontWeight.w500,
+            ),
+          ),
         ),
         const SizedBox(
           height: 18,

@@ -1,9 +1,9 @@
-import 'package:flutercoursetwo/constants.dart';
-import 'package:flutercoursetwo/core/utils/app_router.dart';
-import 'package:flutercoursetwo/core/utils/service_locator.dart';
-import 'package:flutercoursetwo/features/home/data/repos/home_repo_impl.dart';
-import 'package:flutercoursetwo/features/home/presentation/manager/featured_books_cubit/featured_books_cubit.dart';
-import 'package:flutercoursetwo/features/home/presentation/manager/newst_books_cubit/newst_books_cubit.dart';
+import 'package:bookly/constants.dart';
+import 'package:bookly/core/utils/app_router.dart';
+import 'package:bookly/core/utils/service_locator.dart';
+import 'package:bookly/features/home/data/repos/home_repo_impl.dart';
+import 'package:bookly/features/home/presentation/manager/featured_books_cubit/featured_books_cubit.dart';
+import 'package:bookly/features/home/presentation/manager/newst_books_cubit/newst_books_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';

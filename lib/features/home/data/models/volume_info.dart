@@ -1,8 +1,9 @@
-import 'package:flutercoursetwo/features/home/data/models/image_links.dart';
-import 'package:flutercoursetwo/features/home/data/models/reading_modes.dart';
-import 'package:flutercoursetwo/features/home/data/models/summary.dart';
 // import 'package:http/http.dart';
 // import 'package:meta/meta.dart';
+
+import 'package:bookly/features/home/data/models/image_links.dart';
+import 'package:bookly/features/home/data/models/reading_modes.dart';
+import 'package:bookly/features/home/data/models/summary.dart';
 
 class VolumeInfo {
   late ImageLinks? imageLinks;

@@ -1,9 +1,9 @@
-import 'package:flutercoursetwo/core/utils/app_router.dart';
-import 'package:flutercoursetwo/core/utils/styles.dart';
-import 'package:flutercoursetwo/constants.dart';
-import 'package:flutercoursetwo/features/home/data/models/book_model.dart';
-import 'package:flutercoursetwo/features/home/presentation/views/widgets/book_rating.dart';
-import 'package:flutercoursetwo/features/home/presentation/views/widgets/custom_book_image.dart';
+import 'package:bookly/constants.dart';
+import 'package:bookly/core/utils/app_router.dart';
+import 'package:bookly/core/utils/styles.dart';
+import 'package:bookly/features/home/data/models/book_model.dart';
+import 'package:bookly/features/home/presentation/views/widgets/book_rating.dart';
+import 'package:bookly/features/home/presentation/views/widgets/custom_book_image.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 

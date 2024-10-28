@@ -1,9 +1,9 @@
-import 'package:flutercoursetwo/features/home/presentation/views/widgets/best_seller_list_view_item.dart';
+import 'package:bookly/core/widgets/custom_error_widget.dart';
+import 'package:bookly/core/widgets/custom_loading_indicator.dart';
+import 'package:bookly/features/home/presentation/manager/newst_books_cubit/newst_books_cubit.dart';
+import 'package:bookly/features/home/presentation/views/widgets/best_seller_list_view_item.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutercoursetwo/features/home/presentation/manager/newst_books_cubit/newst_books_cubit.dart';
-import 'package:flutercoursetwo/core/widgets/custom_error_widget.dart';
-import 'package:flutercoursetwo/core/widgets/custom_loading_indicator.dart';
 
 class BestSellerListView extends StatelessWidget {
   const BestSellerListView({super.key});

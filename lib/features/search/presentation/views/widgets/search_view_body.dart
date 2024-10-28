@@ -1,6 +1,6 @@
-import 'package:flutercoursetwo/core/utils/styles.dart';
 // import 'package:flutercoursetwo/features/home/presentation/views/widgets/best_seller_list_view_item.dart';
-import 'package:flutercoursetwo/features/search/presentation/views/widgets/custom_search_text_field.dart';
+import 'package:bookly/core/utils/styles.dart';
+import 'package:bookly/features/search/presentation/views/widgets/custom_search_text_field.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 

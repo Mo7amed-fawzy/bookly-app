@@ -1,8 +1,7 @@
-import 'package:flutercoursetwo/core/functions/launch_url.dart';
-import 'package:flutercoursetwo/core/widgets/custom_button.dart';
-import 'package:flutercoursetwo/features/home/data/models/book_model.dart';
+import 'package:bookly/core/functions/launch_url.dart';
+import 'package:bookly/core/widgets/custom_button.dart';
+import 'package:bookly/features/home/data/models/book_model.dart';
 import 'package:flutter/material.dart';
-import 'package:url_launcher/url_launcher.dart';
 
 class BooksAction extends StatelessWidget {
   const BooksAction({super.key, required this.booktourl});
@@ -50,14 +49,6 @@ class BooksAction extends StatelessWidget {
         ],
       ),
     );
-  }
-
-  Future<void> _launchUrl() async {
-    Uri url = Uri.parse(booktourl.volumeInfo.previewLink!);
-    if (await canLaunchUrl(url)) {
-      // throw Exception('Could not launch $_url'); هنا بيعمل اكسبشن ودا مش افضل حل
-      await launchUrl(url);
-    }
   }
 
   String getText(BookModel booktourl) {

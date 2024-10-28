@@ -1,5 +1,5 @@
-import 'package:flutercoursetwo/features/home/data/models/epub.dart';
-import 'package:flutercoursetwo/features/home/data/models/pdf.dart';
+import 'package:bookly/features/home/data/models/epub.dart';
+import 'package:bookly/features/home/data/models/pdf.dart';
 
 class AccessInfo {
   AccessInfo({

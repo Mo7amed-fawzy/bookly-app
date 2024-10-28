@@ -1,8 +1,9 @@
-import 'package:flutercoursetwo/features/home/data/models/acces_info.dart';
-import 'package:flutercoursetwo/features/home/data/models/sale_info.dart';
-import 'package:flutercoursetwo/features/home/data/models/search_info.dart';
-import 'package:flutercoursetwo/features/home/data/models/volume_info.dart';
 // import 'package:http/http.dart';
+
+import 'package:bookly/features/home/data/models/acces_info.dart';
+import 'package:bookly/features/home/data/models/sale_info.dart';
+import 'package:bookly/features/home/data/models/search_info.dart';
+import 'package:bookly/features/home/data/models/volume_info.dart';
 
 class BookModel {
   late VolumeInfo volumeInfo; // سيبها لبعدين
